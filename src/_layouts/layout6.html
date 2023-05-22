@@ -43,16 +43,6 @@ layout: bootstrap
         background-color: #4e342e;
     }
 
-    .main-container {
-        width: 100%;
-        margin: 0 auto;
-        height: 577px;
-        background-color: #008485;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     .content-container {
         width: 1000px;
         margin: 0 auto;
@@ -73,10 +63,6 @@ layout: bootstrap
         height: 100vh;
     }
 
-    .main-container img {
-        max-width: 100%;
-        height: auto;
-    }
 </style>
 
 <div id="layout">
@@ -112,25 +98,11 @@ layout: bootstrap
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">로그인</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Dropdown
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
                             </ul>
-                            <form class="d-flex mt-3" role="search">
+                            <!-- <form class="d-flex mt-3" role="search">
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                 </div>
@@ -139,14 +111,7 @@ layout: bootstrap
     </div>
 
     <div id="content-wrap">
-        <div class="main-container">
-            <div class="traffic">
-                <img src="../images/hana_1.png" width="556" height="358">
-            </div>
-        </div>
-        <div class="content-container">
-            {{content}}
-        </div>
+        
     </div>
     <div id="footer-wrap">
         <div class="footer-container">
