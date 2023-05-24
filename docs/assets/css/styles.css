@@ -11852,5 +11852,12 @@ textarea.form-control-lg {
   }
 }
 /* main scss */
+.nav-item {
+  font-size: larger;
+}
+
+#navbarScroll > ul {
+  margin-left: auto;
+}
 
 /*# sourceMappingURL=styles.css.map */

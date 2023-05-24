@@ -26,59 +26,58 @@
 <style>
     #header-wrap {
         width: 100%;
-        background-color: #8d6e63;
+        background-color: #FFFCFC;
     }
 
     #nav-wrap {
         width: 100%;
-        background-color: #a1887f;
+        background-color: #FFFCFC;
     }
 
     #content-wrap {
         width: 100%;
-        background-color: #f9efeb;
+        background-color: #FFFCFC;
         flex-grow: 1;
         margin-top: 50px;
     }
-
     #footer-wrap {
         width: 100%;
-        background-color: #d7ccc8;
+        background-color: #efeded;
     }
 
     .header-container {
         width: 100%;
         margin: 0 auto;
         /* height: 100px; */
-        background-color: #f6ab9d;
+        background-color: #FFFCFC;
     }
 
     .nav-container {
         width: 1000px;
         margin: 0 auto;
         height: 100px;
-        background-color: #4e342e;
+        background-color: #FFFCFC;
     }
 
     .content-container {
         width: 1000px;
         margin: 0 auto;
         height: 100%;
-        background-color: #008485;
+        background-color: #FFFCFC;
     }
 
     .footer-container {
         width: 1000px;
         margin: 0 auto;
         height: 100px;
-        background-color: #008485;
+        background-color: #FFFCFC;
     }
 
     #layout {
         display: flex;
         flex-direction: column;
         height: 100vh;
-    } 
+    }
 
 </style>
 
@@ -87,44 +86,33 @@
         <div class="header-container">
             
 Header
-            <nav class="navbar bg-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/"><img src="../images/hana_logo.png" alt="로고"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="../images/hana_logo.png"
-                                    alt="로고"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="/serviceInfo">상품/서비스안내</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/ctmCenter">고객센터</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/bankInfo">은행안내</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/login">로그인</a>
-                                </li>
-                            </ul>
-                            <!-- <form class="d-flex mt-3" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form> -->
-                        </div>
-                    </div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/serviceInfo">상품/서비스안내</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/ctmCenter">고객센터</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/bankInfo">은행안내</a>
+                      </li>
+                     
+                      
+                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">로그인</a>
+                      </li>
+                  </div>
                 </div>
-            </nav>
+              </nav>
+
         </div>
     </div>
 
@@ -148,6 +136,5 @@ Header
         </div>
     </div>
 </div>
-
   </body>
 </html>

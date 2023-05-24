@@ -36,7 +36,7 @@
 
     #content-wrap {
         width: 100%;
-        background-color: #f9efeb;
+        background-color: #ffffff;
         flex-grow: 1;
         margin-top: 50px;
     }
@@ -50,7 +50,7 @@
         width: 100%;
         margin: 0 auto;
         /* height: 100px; */
-        background-color: #f6ab9d;
+        background-color: #FFFCFC;
     }
 
     .nav-container {
@@ -64,7 +64,7 @@
         width: 100%;
         margin: 0 auto;
         height: 577px;
-        background-color: #008485;
+        background: rgba(0, 132, 133, 0.6);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -74,7 +74,8 @@
         width: 1000px;
         margin: 0 auto;
         height: 100%;
-        background-color: #008485;
+
+       
     }
 
     .footer-container {
@@ -101,58 +102,35 @@
         <div class="header-container">
             
 Header
-            <nav class="navbar bg-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/"><img src="../images/hana_logo.png" alt="로고"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="../images/hana_logo.png"
-                                    alt="로고"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="/serviceInfo">상품/서비스안내</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/ctmCenter">고객센터</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/bankInfo">은행안내</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/login">로그인</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Dropdown
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <form class="d-flex mt-3" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/serviceInfo">상품/서비스안내</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/ctmCenter">고객센터</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/bankInfo">은행안내</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/login">로그인</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
                 </div>
-            </nav>
+              </nav>
+
         </div>
     </div>
 
@@ -171,47 +149,148 @@ Header
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px; /* 필요한 경우 각 영역 사이의 간격을 조정합니다 */
+        }
+
+        .item {
+            background-color: #ffffff; /* 각 영역의 배경색을 지정합니다 */
+            padding: 10px; /* 각 영역의 여백을 조정합니다 */
+            height: 500px;
+            text-align: center;
+        }
+        .item1{
+            width: 405px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+           padding: 30px;
+        }
+
+
+        .load{
+
+            
+            width: 137.2px;
+            height: 24px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 27px;
+            text-align: center;
+
+            color: #E49600;
+        }
+
+
+        .hanabank{
+            
+            width: 163.95px;
+            height: 24px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 27px;
+            text-align: center;
+
+            color: #008485;
+
+        }
+        .home{
+
+            
+            width: 39.35px;
+            height: 24px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 27px;
+            text-align: center;
+
+            color: #008485;
+
+
+        }
+        .from{
+            
+            width: 57.93px;
+            height: 24px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+
+            color: #CDC9C9;
+        }
+
+
+        .to{
+            
+            width: 57.93px;
+            height: 24px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+
+            color: #CDC9C9;
+
+        }
+        .min{
+            /* 최단거리/최소요금/최소환승 */
+            width: 186px;
+            height: 17px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+
+            color: #CDC9C9;
+
+
+        }
+    </style>
 </head>
 
 <body>
-    
-    <div>
-        <div class="p-5 mb-4 bg-light rounded-3">
-            <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-                <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one
-                    in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it
-                    to your liking.</p>
-                <button class="btn btn-primary btn-lg" type="button">Example button</button>
-            </div>
+    <div class="item1">
+        <span class="home">집</span>
+        <span class="to">에서</span>
+        <span class="hanabank">하나금융티아이</span>
+        <span class="from">까지</span>
+        <span class="load">최적의 경로</span>
+    </div>
+    <div class="container">
+        
+        <div class="item">
+            <span class="min">최단거리/최소요금/최소환승</span>
+        </div>
+        <div class="item">
+            <span class="min">최단거리/최소주유비/통행료</span>
         </div>
     </div>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        하단정보
-    </footer>
+
+    
 </body>
 
 </html>

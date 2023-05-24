@@ -26,59 +26,58 @@
 <style>
     #header-wrap {
         width: 100%;
-        background-color: #8d6e63;
+        background-color: #FFFCFC;
     }
 
     #nav-wrap {
         width: 100%;
-        background-color: #a1887f;
+        background-color: #FFFCFC;
     }
 
     #content-wrap {
         width: 100%;
-        background-color: #f9efeb;
+        background-color: #FFFCFC;
         flex-grow: 1;
         margin-top: 50px;
     }
-
     #footer-wrap {
         width: 100%;
-        background-color: #d7ccc8;
+        background-color: #efeded;
     }
 
     .header-container {
         width: 100%;
         margin: 0 auto;
         /* height: 100px; */
-        background-color: #f6ab9d;
+        background-color: #FFFCFC;
     }
 
     .nav-container {
         width: 1000px;
         margin: 0 auto;
         height: 100px;
-        background-color: #4e342e;
+        background-color: #FFFCFC;
     }
 
     .content-container {
         width: 1000px;
         margin: 0 auto;
         height: 100%;
-        background-color: #008485;
+        background-color: #FFFCFC;
     }
 
     .footer-container {
         width: 1000px;
         margin: 0 auto;
         height: 100px;
-        background-color: #008485;
+        background-color: #FFFCFC;
     }
 
     #layout {
         display: flex;
         flex-direction: column;
         height: 100vh;
-    } 
+    }
 
 </style>
 
@@ -87,44 +86,33 @@
         <div class="header-container">
             
 Header
-            <nav class="navbar bg-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/"><img src="../images/hana_logo.png" alt="로고"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="../images/hana_logo.png"
-                                    alt="로고"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="/serviceInfo">상품/서비스안내</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/ctmCenter">고객센터</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/bankInfo">은행안내</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/login">로그인</a>
-                                </li>
-                            </ul>
-                            <!-- <form class="d-flex mt-3" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form> -->
-                        </div>
-                    </div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/serviceInfo">상품/서비스안내</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/ctmCenter">고객센터</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/bankInfo">은행안내</a>
+                      </li>
+                     
+                      
+                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">로그인</a>
+                      </li>
+                  </div>
                 </div>
-            </nav>
+              </nav>
+
         </div>
     </div>
 
@@ -137,208 +125,6 @@ Header
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-   
-
-
-/* 로그인 
-
-position: absolute;
-width: 69px;
-height: 30px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 30px;
-text-align: center;
-
-color: #000000;
-
-
-
-    /* Group 31 
-
-    position: absolute;
-    width: 510px;
-    height: 72px;
-
-
-
-    /* 아이디 
-
-    position: absolute;
-    width: 42px;
-    height: 18px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-
-    color: #000000;
-
-
-
-
-    /* 아이디를 입력해 주세요 
-
-    position: absolute;
-    width: 147px;
-    height: 18px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-
-    color: #CDC9C9;
-
-
-
-    /* 아이디 
-
-    position: absolute;
-    width: 42px;
-    height: 18px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-
-    color: #008485;
-
-
-
-    /* Group 35 
-    position: absolute;
-    width: 511px;
-    height: 72px;
-
-
-
-    /* 비밀번호 
-
-    position: absolute;
-    width: 56px;
-    height: 18px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-
-    color: #000000;
-
-
-
-    /* Rectangle 6 
-
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 360px;
-    height: 50px;
-
-    background: #FFFFFF;
-    border: 1px solid #CDC9C9;
-    border-radius: 10px;
-
-
-    /* Rectangle 7 
-
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 141px;
-    height: 50px;
-
-    background: #FFFFFF;
-    border: 1px solid #008485;
-    border-radius: 10px;
-
-
-    /* 비밀번호를 입력해 주세요 
-
-    position: absolute;
-    width: 161px;
-    height: 18px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-
-    color: #CDC9C9;
-
-
-
-    /* 비밀번호 
-
-    position: absolute;
-    width: 59px;
-    height: 18px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-
-    color: #008485;
-
-
-
-    /* Group 34 
-
-    position: absolute;
-    width: 510px;
-    height: 50px;
-
-
-
-    /* Rectangle 8 
-
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 510px;
-    height: 50px;
-
-    background: #FFFFFF;
-    border: 1px solid #008485;
-    border-radius: 10px;
-
-
-    /* 로그인 하기 
-
-    position: absolute;
-    width: 300.21px;
-    height: 18px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-
-    color: #008485;
-*/
-
-        
         .userId{
             box-sizing: border-box;
             position: absolute;
@@ -365,38 +151,26 @@ color: #000000;
             color: #CDC9C9;
         }
         .group71{
-            position: absolute;
-            width: 510px;
-            height: 72px;
-
-        }
-        .idBox{
-            position: absolute;
-            width: 42px;
-            height: 18px;
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 18px;
+            width: 100%;
+            height: auto;
             text-align: center;
-
-            color: #000000;
-
+            margin: auto;
+            text-align: center;
+            padding: 300px;
         }
-        .rac6{
+      
+ 
+        #rec6{
+            float: right;
+            padding: 10px;
+            width: 100%;
             box-sizing: border-box;
-
-            position: absolute;
-            width: 360px;
             height: 50px;
-            
+            text-align: right;
             background: #FFFFFF;
             border: 1px solid #CDC9C9;
             border-radius: 10px;
         }
-
         .rec6::placeholder{
             position: absolute;
             width: 147px;
@@ -422,19 +196,92 @@ color: #000000;
             border-radius: 10px;
 
         }
+       
+        #login{
+            width: 69px;
+            height: 30px;
 
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 30px;
+            text-align: center;
+
+            color: #000000;
+        }
+        .idbox{
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+            display: flex;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+
+            color: #000000;
+
+
+        }
+
+        #login2{
+            box-sizing: border-box;
+            width: 510px;
+            height: 50px;
+            background: #FFFFFF;
+            border: 1px solid #008485;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        .box2 > button > span{
+            width: 300.21px;
+            height: 18px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+            color: #008485;
+        }
+       
+        .flexlogin{
+            display: inline-block;
+            width: 511px;
+        }
+        .loginform{
+            
+            height: 303px;  
+        }
     </style>
 </head>
 <body>
-    로그인
-
-        <div class="group71">
-            <div class="idBox">아이디</div>
-            <input type="text" class="rec6" placeholder="아이디를입력해주세요"/>
-            <button class="rec7">아이디</button>
-            </div>
+    <div class="group71">
+        <div class="group31">
+            <form action="">
+                <spen id="login">로그인</spen>
+                <br/>
+                </div>
+                <div class="flexlogin">
+                    <span class="idbox">아이디</span>
+                    <input type="text" class="rec6" id="rec6" placeholder="아이디를 입력해주세요"/>                     
+                </div>
+                <br/>
+                <div class="flexlogin">
+                    <span class="idbox">비밀번호</span>
+                    <input type="text" class="rec6" id="rec6" placeholder="비밀번호를 입력해주세요"/>                     
+                </div>
+                <br/>
+                <button id="login2">
+                    <span>로그인하기</span>
+                </button>
+            </form>
         </div>
-
+    </div>
 </body>
 </html>
     </div>
@@ -444,6 +291,5 @@ color: #000000;
         </div>
     </div>
 </div>
-
   </body>
 </html>
