@@ -47,7 +47,7 @@ layout: bootstrap
         width: 100%;
         margin: 0 auto;
         height: 577px;
-        background: rgba(0, 132, 133, 0.6);
+        background: linear-gradient(to bottom, rgba(0, 132, 133, 0.6), rgb(136, 136, 136,0.6));
         display: flex;
         justify-content: center;
         align-items: center;
@@ -74,10 +74,32 @@ layout: bootstrap
         height: 100vh;
     }
 
-    .main-container img {
-        max-width: 100%;
-        height: auto;
+    .trafficCard{
+        opacity: 1;
+        transform: translateX(0%) rotate(20deg);
+ 
     }
+    
+    @keyframes slideAndRotate {
+        0% {
+            opacity: 1;
+            transform: translateX(-100%) rotate(0deg);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0%) rotate(20deg);
+        }
+       
+    }
+    .trafficCard img {
+  
+  box-shadow: 0 0 10px rgb(74, 73, 73);
+  border-radius: 15px;
+}
+.trafficCard {
+  animation: slideAndRotate 3s;
+}
+
 </style>
 
 <div id="layout">
@@ -93,7 +115,7 @@ layout: bootstrap
                   <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/serviceInfo">상품/서비스안내</a>
+                        <a class="nav-link active" aria-current="page" href="/serviceInfo">HOME</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/ctmCenter">고객센터</a>
@@ -101,14 +123,15 @@ layout: bootstrap
                       <li class="nav-item">
                         <a class="nav-link" href="/bankInfo">은행안내</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/login">로그인</a>
-                      </li>
+                    
                     </ul>
-                    <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link">로그인</a>
+                        </li>
+                        </ul>
+                        
+                      </ul>
                   </div>
                 </div>
               </nav>
@@ -118,9 +141,14 @@ layout: bootstrap
 
     <div id="content-wrap">
         <div class="main-container">
-            <div class="traffic">
-                <img src="../images/hana_1.png" width="556" height="358">
-            </div>
+            <div class="trafficCard" id="trafficCard">
+                <img src="../images/11832.png" width="500" height="300"/>
+                
+                <span>12</span></div><br/>
+                <span>23</span><br/>
+                <span>44</span><br/>
+              </div>
+              
         </div>
         <div class="content-container">
             {{content}}
@@ -131,4 +159,6 @@ layout: bootstrap
             {% include footer.html %}
         </div>
     </div>
+
 </div>
+
