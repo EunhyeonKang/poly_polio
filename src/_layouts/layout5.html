@@ -7,6 +7,18 @@ layout: bootstrap
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 <style>
+    @font-face {
+          font-family: 'Noto Sans KR';
+          src:url('../assets/font/Hana2-Bold.otf') format('opentype'),
+              url('../assets/font/Hana2-CM.otf') format('opentype'),
+              url('../assets/font/Hana2-Heavy.otf') format('opentype'),
+              url('../assets/font/Hana2-Light.otf') format('opentype'),
+              url('../assets/font/Hana2-Medium.otf') format('opentype'),
+              url('../assets/font/Hana2-Regular.otf') format('opentype');
+      } 
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
     #header-wrap {
         width: 100%;
         background-color: #8d6e63;
@@ -46,7 +58,7 @@ layout: bootstrap
     .main-container {
         width: 100%;
         margin: 0 auto;
-        height: 577px;
+        height: 700px;
         background: linear-gradient(to bottom, rgba(0, 132, 133, 0.6), rgb(136, 136, 136,0.6));
         display: flex;
         justify-content: center;
@@ -76,8 +88,9 @@ layout: bootstrap
 
     .trafficCard{
         opacity: 1;
-        transform: translateX(0%) rotate(20deg);
- 
+        transform: translateX(0%) rotate(0deg);
+        animation: slideAndRotate 3s;
+        margin: 50px;
     }
     
     @keyframes slideAndRotate {
@@ -87,18 +100,55 @@ layout: bootstrap
         }
         100% {
             opacity: 1;
-            transform: translateX(0%) rotate(20deg);
+            transform: translateX(0%) rotate(0deg);
         }
        
     }
     .trafficCard img {
-  
-  box-shadow: 0 0 10px rgb(74, 73, 73);
-  border-radius: 15px;
-}
-.trafficCard {
-  animation: slideAndRotate 3s;
-}
+        box-shadow: 0 0 10px rgb(74, 73, 73);
+        border-radius: 15px;
+    }
+
+    .textAnimation .line {
+        opacity: 0;
+        transition: opacity 1s ease;
+        text-align: center;
+        margin-left: 50px;
+    }
+
+    .textAnimation .line.show {
+        text-shadow: 2px 2px 4px rgba(191, 191, 191, 0.5);
+        opacity: 1;
+    }
+
+    .textAnimation .line.show .text {
+        animation: fadeIn 1s ease;
+        font-size: 24px;
+        color: black;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    .textAnimation .line:nth-child(1)>span{
+        font-size: 45px;
+        font-weight: bold;
+    }
+
+    .textAnimation .line:nth-child(3)>span{
+        font-size: 45px;
+        font-weight: bold;
+    }
+    .textAnimation .line:nth-child(5)>span{
+        font-size: 45px;
+        font-weight: bold;
+    }
+    .hana{
+        font-size: 45px;
+        color: #008485;
+        font-weight: bold;
+    }
 
 </style>
 
@@ -123,11 +173,13 @@ layout: bootstrap
                       <li class="nav-item">
                         <a class="nav-link" href="/bankInfo">은행안내</a>
                       </li>
-                    
+                      <li class="nav-item">
+                        <a class="nav-link" href="/bankInfo">채용</a>
+                      </li>
                     </ul>
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                         <li class="nav-item">
-                            <a class="nav-link">로그인</a>
+                            <a class="nav-link" href="/login">로그인</a>
                         </li>
                         </ul>
                         
@@ -142,13 +194,23 @@ layout: bootstrap
     <div id="content-wrap">
         <div class="main-container">
             <div class="trafficCard" id="trafficCard">
-                <img src="../images/11832.png" width="500" height="300"/>
-                
-                <span>12</span></div><br/>
-                <span>23</span><br/>
-                <span>44</span><br/>
+                <img src="../images/hanacard.png" width="189" height="300"/>
+                <img src="../images/tvl_passport_front.png" width="189" height="300"/>
               </div>
-              
+            <div class="textAnimation">
+                <div class="line">
+                  <span><span class="hana">하나 컨택트리 카드</span>로</span>
+                </div>
+                <br/>
+                <div class="line">
+                  <span>전 세계 어디에서나</span>
+                </div>
+                <br/>
+                <div class="line">
+                    <span>원활하게 이동하세요</span>
+                  </div>
+                <br/>
+              </div>          
         </div>
         <div class="content-container">
             {{content}}
@@ -162,3 +224,17 @@ layout: bootstrap
 
 </div>
 
+<script>
+    const lines = document.querySelectorAll('.textAnimation .line');
+
+    function showLines() {
+    lines.forEach((line, index) => {
+        setTimeout(() => {
+        line.classList.add('show');
+        }, (index + 1) * 1000);
+    });
+    }
+
+    showLines();
+
+</script>

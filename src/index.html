@@ -128,6 +128,46 @@ layout: layout5
 
 
         }
+        .parent_div{
+            margin-top: 50px;
+            margin-bottom: 80px;
+        }
+        .child_div{
+            margin-left: auto;
+            margin-right: auto;
+            transform-origin: 50% 0%;
+            background-color: white;
+            height: 100%;
+        }
+        .cardBox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .block img {
+            width: 300px;
+            margin-bottom: 10px;
+        }
+
+        .block button {
+            width: 300px;
+            height: 50px;
+            background: #FFFFFF;
+            border: 3px solid #008485;
+            border-radius: 10px;
+            margin-top: 15px;
+            cursor: pointer;
+            color: #008485;
+        }
 
 
     </style>
@@ -135,6 +175,7 @@ layout: layout5
 </head>
 
 <body>
+    
     <div class="item1">
         <span class="home">집</span>
         <span class="to">에서</span>
@@ -151,9 +192,49 @@ layout: layout5
             <span class="min">최단거리/최소주유비/통행료</span>
         </div>
     </div>
-
-
+    <hr/>
+    <div class="parent_div">
+        <div class="child_div">
+            <div class="icon_div">
+                <div class="cardBox">
+                    <div class="block">
+                      <img src="./images/tvl_sticker_back.png" alt="Image 1">
+                      <button>버튼 1</button>
+                    </div>
+                    <div class="block">
+                      <img src="./images/tvl_sticker_back.png" alt="Image 2">
+                      <button>버튼 2</button>
+                    </div>
+                    <div class="block">
+                      <img src="./images/tvl_sticker_back.png" alt="Image 3">
+                      <button>버튼 3</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
     
 </body>
+<script>
+    window.onscroll = () => {
+        const parentDiv = document.querySelector('.parent_div');
+        const viewportHeight = window.innerHeight;
+        const fromViewportToParentHeight = parentDiv.getBoundingClientRect().top;
+        const scrolling = viewportHeight - fromViewportToParentHeight;
+        // parentDiv의 height가 뷰포트 높이보다 크면 뷰포트로, 아닐경우 parentDiv로
+        let divHeight = parentDiv.clientHeight > viewportHeight ? viewportHeight : parentDiv.clientHeight;
+        let scrollRate = scrolling / divHeight * 100;
 
+        if (scrolling / divHeight * 100 < 0) {
+            scrollRate = 0;
+        } else if (scrolling / divHeight * 100 > 100) {
+            scrollRate = 100;
+        }
+
+        // 스타일 적용하는 부분
+        const childDiv = document.querySelector('.child_div');
+        childDiv.style.transform = `scale(${scrollRate / 100})`;
+    };
+
+</script>
 </html>
