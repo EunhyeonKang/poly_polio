@@ -8,6 +8,16 @@ layout: bootstrap
     crossorigin="anonymous"></script>
 <style>
    
+   @font-face {
+          font-family: 'Noto Sans KR';
+          src:url('../assets/font/Hana2-Bold.otf') format('opentype'),
+              url('../assets/font/Hana2-CM.otf') format('opentype'),
+              url('../assets/font/Hana2-Heavy.otf') format('opentype'),
+              url('../assets/font/Hana2-Light.otf') format('opentype'),
+              url('../assets/font/Hana2-Medium.otf') format('opentype'),
+              url('../assets/font/Hana2-Regular.otf') format('opentype');
+      } 
+
     #header-wrap {
         width: 100%;
         background-color: #8d6e63;
@@ -22,7 +32,6 @@ layout: bootstrap
         width: 100%;
         background-color: #ffffff;
         flex-grow: 1;
-        margin-top: 50px;
     }
 
     #footer-wrap {
@@ -47,7 +56,7 @@ layout: bootstrap
     .main-container {
         width: 100%;
         margin: 0 auto;
-        height: 700px;
+        height: 500px;
         background: linear-gradient(to bottom, rgba(0, 132, 133, 0.6), rgb(136, 136, 136,0.6));
         display: flex;
         justify-content: center;
@@ -76,7 +85,12 @@ layout: bootstrap
         opacity: 1;
         transform: translateX(0%) rotate(0deg);
         animation: slideAndRotate 3s;
-        margin: 50px;
+        margin-left: 50px;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        display: flex;
+        justify-content: right;
     }
     
     @keyframes slideAndRotate {
@@ -99,10 +113,19 @@ layout: bootstrap
     .textAnimation .line {
         opacity: 0;
         transition: opacity 1s ease;
-        text-align: left;
+        text-align: center;
         margin-left: 30px;
+        font-family: 'Noto Sans KR', sans-serif;
+        width: 350px;
     }
-
+    .textAnimation{
+        margin-right: 50px;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
     .textAnimation .line.show {
         text-shadow: 2px 2px 4px rgba(191, 191, 191, 0.5);
         opacity: 1;
@@ -119,21 +142,22 @@ layout: bootstrap
         100% { opacity: 1; }
     }
     .textAnimation .line:nth-child(1)>span{
-        font-size: 45px;   
+        font-size: 36px;   
     }
     .textAnimation .line:nth-child(3)>span{
-        font-size: 45px;
+        font-size: 36px;
     }
     .textAnimation .line:nth-child(5)>span{
-        font-size: 45px;
+        font-size: 36px;
     }
     .hana{
-        font-size: 45px;
+        font-size: 36px;
         color: #008485;
     }
     .mainbutton{
-        margin-left: 30px;
-        text-align: left;
+        width: 350px;
+       margin-left: 30px;
+       animation: fadeIn 6s ease;
     }
     .mainbutton>button {
         background: #ffbe4c;
@@ -181,7 +205,7 @@ layout: bootstrap
                         <a class="nav-link" href="/bankInfo">충전안내</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/bankInfo">아밴트</a>
+                        <a class="nav-link" href="/bankInfo">이벤트</a>
                       </li>
                     </ul>
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
@@ -218,8 +242,8 @@ layout: bootstrap
                   </div>
                 <br/>
                 <div class="mainbutton">
-                    <button>컨텍트리 카드</button>
-                    <button>카드충전 안내</button>
+                    <button id="contact">컨텍트리 카드</button>
+                    <button id="cardInfo">카드충전 안내</button>
                 </div>
               </div>        
         </div>
@@ -249,3 +273,11 @@ layout: bootstrap
     showLines();
 
 </script>
+<script>
+    document.getElementById('contact').addEventListener('click', function() {
+      window.location.href = '/ctmCenter';
+    });
+    document.getElementById('cardInfo').addEventListener('click', function() {
+      window.location.href = '/bankInfo';
+    });
+  </script>

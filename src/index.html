@@ -211,6 +211,11 @@ layout: layout5
         .mobileWordBreak_D9KG7 {
             display: inline-block;
         }
+        #map {
+      width: 100%;
+      height: 400px;
+    }
+
     </style>
    
 </head>
@@ -283,7 +288,8 @@ layout: layout5
             </div>
         </div>
     </div>
-    
+    <div id="map"></div>
+
 </body>
 <script>
     window.onscroll = () => {
@@ -307,4 +313,24 @@ layout: layout5
     };
 
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <script>
+    function initMap() {
+      // 지도 초기화 및 표시할 위치 설정
+      var myLatLng = {lat: 37.5665, lng: 126.9780};
+
+      // 지도 생성
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: myLatLng
+      });
+
+      // 마커 생성
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: '여기에 마커가 표시됩니다!'
+      });
+    }
+  </script>
 </html>

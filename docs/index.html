@@ -6,7 +6,7 @@
     <meta name="description" content="Jiny linux">
     <meta name="author" content="HojinLee">
 
-    <title>JinyDev</title>
+    <title>hana</title>
     <link rel="stylesheet" href='/assets/css/styles.css'>
 
     
@@ -25,6 +25,16 @@
     crossorigin="anonymous"></script>
 <style>
    
+   @font-face {
+          font-family: 'Noto Sans KR';
+          src:url('../assets/font/Hana2-Bold.otf') format('opentype'),
+              url('../assets/font/Hana2-CM.otf') format('opentype'),
+              url('../assets/font/Hana2-Heavy.otf') format('opentype'),
+              url('../assets/font/Hana2-Light.otf') format('opentype'),
+              url('../assets/font/Hana2-Medium.otf') format('opentype'),
+              url('../assets/font/Hana2-Regular.otf') format('opentype');
+      } 
+
     #header-wrap {
         width: 100%;
         background-color: #8d6e63;
@@ -39,7 +49,6 @@
         width: 100%;
         background-color: #ffffff;
         flex-grow: 1;
-        margin-top: 50px;
     }
 
     #footer-wrap {
@@ -64,7 +73,7 @@
     .main-container {
         width: 100%;
         margin: 0 auto;
-        height: 700px;
+        height: 500px;
         background: linear-gradient(to bottom, rgba(0, 132, 133, 0.6), rgb(136, 136, 136,0.6));
         display: flex;
         justify-content: center;
@@ -93,7 +102,12 @@
         opacity: 1;
         transform: translateX(0%) rotate(0deg);
         animation: slideAndRotate 3s;
-        margin: 50px;
+        margin-left: 50px;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        display: flex;
+        justify-content: right;
     }
     
     @keyframes slideAndRotate {
@@ -116,10 +130,19 @@
     .textAnimation .line {
         opacity: 0;
         transition: opacity 1s ease;
-        text-align: left;
+        text-align: center;
         margin-left: 30px;
+        font-family: 'Noto Sans KR', sans-serif;
+        width: 350px;
     }
-
+    .textAnimation{
+        margin-right: 50px;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
     .textAnimation .line.show {
         text-shadow: 2px 2px 4px rgba(191, 191, 191, 0.5);
         opacity: 1;
@@ -136,21 +159,22 @@
         100% { opacity: 1; }
     }
     .textAnimation .line:nth-child(1)>span{
-        font-size: 45px;   
+        font-size: 36px;   
     }
     .textAnimation .line:nth-child(3)>span{
-        font-size: 45px;
+        font-size: 36px;
     }
     .textAnimation .line:nth-child(5)>span{
-        font-size: 45px;
+        font-size: 36px;
     }
     .hana{
-        font-size: 45px;
+        font-size: 36px;
         color: #008485;
     }
     .mainbutton{
-        margin-left: 30px;
-        text-align: left;
+        width: 350px;
+       margin-left: 30px;
+       animation: fadeIn 6s ease;
     }
     .mainbutton>button {
         background: #ffbe4c;
@@ -176,8 +200,8 @@
 <div id="layout">
     <div id="header-wrap">
         <div class="header-container">
-            
-Header
+            <!-- 
+Header -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/"><img src="../images/hana_logo.png" alt="로고"></a>
@@ -199,7 +223,7 @@ Header
                         <a class="nav-link" href="/bankInfo">충전안내</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/bankInfo">아밴트</a>
+                        <a class="nav-link" href="/bankInfo">이벤트</a>
                       </li>
                     </ul>
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
@@ -236,8 +260,8 @@ Header
                   </div>
                 <br/>
                 <div class="mainbutton">
-                    <button>컨텍트리 카드</button>
-                    <button>카드충전 안내</button>
+                    <button id="contact">컨텍트리 카드</button>
+                    <button id="cardInfo">카드충전 안내</button>
                 </div>
               </div>        
         </div>
@@ -452,6 +476,11 @@ Header
         .mobileWordBreak_D9KG7 {
             display: inline-block;
         }
+        #map {
+      width: 100%;
+      height: 400px;
+    }
+
     </style>
    
 </head>
@@ -524,7 +553,8 @@ Header
             </div>
         </div>
     </div>
-    
+    <div id="map"></div>
+
 </body>
 <script>
     window.onscroll = () => {
@@ -548,6 +578,26 @@ Header
     };
 
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <script>
+    function initMap() {
+      // 지도 초기화 및 표시할 위치 설정
+      var myLatLng = {lat: 37.5665, lng: 126.9780};
+
+      // 지도 생성
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: myLatLng
+      });
+
+      // 마커 생성
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: '여기에 마커가 표시됩니다!'
+      });
+    }
+  </script>
 </html>
 
         </div>
@@ -574,5 +624,13 @@ Header
     showLines();
 
 </script>
+<script>
+    document.getElementById('contact').addEventListener('click', function() {
+      window.location.href = '/ctmCenter';
+    });
+    document.getElementById('cardInfo').addEventListener('click', function() {
+      window.location.href = '/bankInfo';
+    });
+  </script>
   </body>
 </html>
