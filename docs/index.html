@@ -24,18 +24,7 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 <style>
-    @font-face {
-          font-family: 'Noto Sans KR';
-          src:url('../assets/font/Hana2-Bold.otf') format('opentype'),
-              url('../assets/font/Hana2-CM.otf') format('opentype'),
-              url('../assets/font/Hana2-Heavy.otf') format('opentype'),
-              url('../assets/font/Hana2-Light.otf') format('opentype'),
-              url('../assets/font/Hana2-Medium.otf') format('opentype'),
-              url('../assets/font/Hana2-Regular.otf') format('opentype');
-      } 
-      body {
-        font-family: 'Noto Sans KR', sans-serif;
-      }
+   
     #header-wrap {
         width: 100%;
         background-color: #8d6e63;
@@ -85,9 +74,6 @@
     .content-container {
         width: 1000px;
         margin: 0 auto;
-        height: 100%;
-
-       
     }
 
     .footer-container {
@@ -124,13 +110,14 @@
     .trafficCard img {
         box-shadow: 0 0 10px rgb(74, 73, 73);
         border-radius: 15px;
+        margin:5px;
     }
 
     .textAnimation .line {
         opacity: 0;
         transition: opacity 1s ease;
-        text-align: center;
-        margin-left: 50px;
+        text-align: left;
+        margin-left: 30px;
     }
 
     .textAnimation .line.show {
@@ -149,24 +136,41 @@
         100% { opacity: 1; }
     }
     .textAnimation .line:nth-child(1)>span{
-        font-size: 45px;
-        font-weight: bold;
+        font-size: 45px;   
     }
-
     .textAnimation .line:nth-child(3)>span{
         font-size: 45px;
-        font-weight: bold;
     }
     .textAnimation .line:nth-child(5)>span{
         font-size: 45px;
-        font-weight: bold;
     }
     .hana{
         font-size: 45px;
         color: #008485;
-        font-weight: bold;
     }
-
+    .mainbutton{
+        margin-left: 30px;
+        text-align: left;
+    }
+    .mainbutton>button {
+        background: #ffbe4c;
+        border: 1px solid #ffbe4c;
+        margin-top: 15px;
+        margin: 5px;
+        max-width: fit-content;
+        padding: 10px 20px;
+        border-radius: 41px;
+        -webkit-box-shadow: 0 4px 9px rgba(0,0,0,.15);
+        box-shadow: 0 4px 9px rgba(0,0,0,.15);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21px;   
+        width: 330px;
+    }
+    .mainbutton>button:hover {
+        font-size: large;
+        color: #FFFFFF;
+    }
 </style>
 
 <div id="layout">
@@ -186,13 +190,16 @@ Header
                         <a class="nav-link active" aria-current="page" href="/serviceInfo">HOME</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/ctmCenter">고객센터</a>
+                        <a class="nav-link" href="/ctmCenter">교통정보</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/bankInfo">은행안내</a>
+                        <a class="nav-link" href="/ctmCenter">카드안내</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/bankInfo">채용</a>
+                        <a class="nav-link" href="/bankInfo">충전안내</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/bankInfo">아밴트</a>
                       </li>
                     </ul>
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
@@ -212,8 +219,8 @@ Header
     <div id="content-wrap">
         <div class="main-container">
             <div class="trafficCard" id="trafficCard">
-                <img src="../images/hanacard.png" width="189" height="300"/>
-                <img src="../images/tvl_passport_front.png" width="189" height="300"/>
+                <img src="../images/hanacard.png" width="219" height="330"/>
+                <img src="../images/tvl_passport_front.png" width="219" height="330"/>
               </div>
             <div class="textAnimation">
                 <div class="line">
@@ -228,7 +235,11 @@ Header
                     <span>원활하게 이동하세요</span>
                   </div>
                 <br/>
-              </div>          
+                <div class="mainbutton">
+                    <button>컨텍트리 카드</button>
+                    <button>카드충전 안내</button>
+                </div>
+              </div>        
         </div>
         <div class="content-container">
             <!DOCTYPE html>
@@ -243,38 +254,36 @@ Header
         .container {
             display: grid;
             grid-template-rows: 1fr;
-            grid-template-columns: 1fr 1fr;
             gap: 10px; /* 필요한 경우 각 영역 사이의 간격을 조정합니다 */
         }
 
         .item {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px;
             background-color: #ffffff; /* 각 영역의 배경색을 지정합니다 */
             padding: 10px; /* 각 영역의 여백을 조정합니다 */
-            height: 500px;
+            height: 100px;
             text-align: center;
+            margin: auto;
         }
         .item1{
             width: 405px;
             text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-           padding: 30px;
+            margin: auto;
+            padding: 30px;
         }
-
-
         .load{
-
-            
             width: 137.2px;
             height: 24px;
-
             font-family: 'Inter';
             font-style: normal;
             font-weight: 700;
             font-size: 22px;
             line-height: 27px;
             text-align: center;
-
+            margin: auto;
             color: #E49600;
         }
 
@@ -399,30 +408,102 @@ Header
             color: #008485;
         }
 
-
+        .section_11tbR {
+            display: block;
+            margin: 0 0 12px;
+            padding: 48px 0;
+            background: #fff;
+        }.container_1zV2H {
+            position: relative;
+            display: block;
+            width: 100%;
+            max-width: 946px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }.featureTitle_k0uDt {
+            display: block;
+            color: #7b7b7b;
+            font-size: 18px;
+            line-height: 1.2;
+            text-align: center;
+        }.featureTitle_k0uDt>strong {
+            display: block;
+            margin: 12px 0 0;
+            color: #0b0c0c;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: -2px;
+        }.features_2Xft6 {
+            display: block;
+        } ul {
+            list-style: none;
+        }.features_2Xft6>li {
+            float: left;
+            display: block;
+            width: 33.33%;
+            padding: 0 16px;
+            text-align: center;
+        }.featureImage_Ew8M_ {
+            display: inline-block;
+            width: 160px;
+            height: 110px;
+            margin-bottom: 16px;
+        }
+        .mobileWordBreak_D9KG7 {
+            display: inline-block;
+        }
     </style>
    
 </head>
 
 <body>
+    <section class="section_11tbR">
+        <div class="container_1zV2H">
+            <div class="featureTitle_k0uDt">하나와 함께하는 해외 여행은 더욱 혜택 가득한 여정입니다. 
+                <strong>현지 교통정보와 함께, 특별 할인 혜택을 누리며 편리한 여행을 즐겨보세요!</strong>
+            </div>
+            <ul class="features_2Xft6">
+                <li><div class="featureImageData_3nApL featureImage_Ew8M_"></div>
+                    <div class="featureDesc_v3htt">
+                        <div>교통정보 제공</div>
+                        <div>사용자들에게 해외 교통수단의 요금, 운행 시간, 환율 등을 제공하여 비교 및 선택할 수 있도록 합니다. 사용자들은 여행지에서 어떤 교통수단을 이용할지 판단할 수 있습니다.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="featureImagePersonalized_3Jlxx featureImage_Ew8M_"></div>
+                    <div class="featureDesc_v3htt">
+                        <div>국가별 컨택트리 가능 여부 조회</div>
+                        <div>사용자들이 여행하는 국가에서 컨택트리 카드를 사용할 수 있는지 여부를 확인할 수 있는 기능을 제공합니다. 사용자들은 여행지에서 컨택트리 카드를 이용할 수 있는지 사전에 파악할 수 있습니다.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="featureImageAd_1a4aM featureImage_Ew8M_"></div>
+                    <div class="featureDesc_v3htt">
+                        <div>할인 혜택 제공</div>
+                        <div>컨택트리 카드 이용 시 특정 제휴 업체와 협력하여 할인 혜택을 제공하는 기능을 추가합니다.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <br/><br/>
+
     
-    <div class="item1">
-        <span class="home">집</span>
-        <span class="to">에서</span>
-        <span class="hanabank">하나금융티아이</span>
-        <span class="from">까지</span>
-        <span class="load">최적의 경로</span>
-    </div>
     <div class="container">
-        
+        <div class="item1">
+            <span class="home">집</span>
+            <span class="to">에서</span>
+            <span class="hanabank">하나금융티아이</span>
+            <span class="from">까지</span>
+            <span class="load">최적의 경로</span>
+        </div>    
         <div class="item">
             <span class="min">최단거리/최소요금/최소환승</span>
-        </div>
-        <div class="item">
             <span class="min">최단거리/최소주유비/통행료</span>
         </div>
     </div>
-    <hr/>
     <div class="parent_div">
         <div class="child_div">
             <div class="icon_div">

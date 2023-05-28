@@ -7,18 +7,7 @@ layout: bootstrap
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 <style>
-    @font-face {
-          font-family: 'Noto Sans KR';
-          src:url('../assets/font/Hana2-Bold.otf') format('opentype'),
-              url('../assets/font/Hana2-CM.otf') format('opentype'),
-              url('../assets/font/Hana2-Heavy.otf') format('opentype'),
-              url('../assets/font/Hana2-Light.otf') format('opentype'),
-              url('../assets/font/Hana2-Medium.otf') format('opentype'),
-              url('../assets/font/Hana2-Regular.otf') format('opentype');
-      } 
-      body {
-        font-family: 'Noto Sans KR', sans-serif;
-      }
+   
     #header-wrap {
         width: 100%;
         background-color: #8d6e63;
@@ -68,9 +57,6 @@ layout: bootstrap
     .content-container {
         width: 1000px;
         margin: 0 auto;
-        height: 100%;
-
-       
     }
 
     .footer-container {
@@ -107,13 +93,14 @@ layout: bootstrap
     .trafficCard img {
         box-shadow: 0 0 10px rgb(74, 73, 73);
         border-radius: 15px;
+        margin:5px;
     }
 
     .textAnimation .line {
         opacity: 0;
         transition: opacity 1s ease;
-        text-align: center;
-        margin-left: 50px;
+        text-align: left;
+        margin-left: 30px;
     }
 
     .textAnimation .line.show {
@@ -132,24 +119,41 @@ layout: bootstrap
         100% { opacity: 1; }
     }
     .textAnimation .line:nth-child(1)>span{
-        font-size: 45px;
-        font-weight: bold;
+        font-size: 45px;   
     }
-
     .textAnimation .line:nth-child(3)>span{
         font-size: 45px;
-        font-weight: bold;
     }
     .textAnimation .line:nth-child(5)>span{
         font-size: 45px;
-        font-weight: bold;
     }
     .hana{
         font-size: 45px;
         color: #008485;
-        font-weight: bold;
     }
-
+    .mainbutton{
+        margin-left: 30px;
+        text-align: left;
+    }
+    .mainbutton>button {
+        background: #ffbe4c;
+        border: 1px solid #ffbe4c;
+        margin-top: 15px;
+        margin: 5px;
+        max-width: fit-content;
+        padding: 10px 20px;
+        border-radius: 41px;
+        -webkit-box-shadow: 0 4px 9px rgba(0,0,0,.15);
+        box-shadow: 0 4px 9px rgba(0,0,0,.15);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21px;   
+        width: 330px;
+    }
+    .mainbutton>button:hover {
+        font-size: large;
+        color: #FFFFFF;
+    }
 </style>
 
 <div id="layout">
@@ -168,13 +172,16 @@ layout: bootstrap
                         <a class="nav-link active" aria-current="page" href="/serviceInfo">HOME</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/ctmCenter">고객센터</a>
+                        <a class="nav-link" href="/ctmCenter">교통정보</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/bankInfo">은행안내</a>
+                        <a class="nav-link" href="/ctmCenter">카드안내</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/bankInfo">채용</a>
+                        <a class="nav-link" href="/bankInfo">충전안내</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/bankInfo">아밴트</a>
                       </li>
                     </ul>
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
@@ -194,8 +201,8 @@ layout: bootstrap
     <div id="content-wrap">
         <div class="main-container">
             <div class="trafficCard" id="trafficCard">
-                <img src="../images/hanacard.png" width="189" height="300"/>
-                <img src="../images/tvl_passport_front.png" width="189" height="300"/>
+                <img src="../images/hanacard.png" width="219" height="330"/>
+                <img src="../images/tvl_passport_front.png" width="219" height="330"/>
               </div>
             <div class="textAnimation">
                 <div class="line">
@@ -210,7 +217,11 @@ layout: bootstrap
                     <span>원활하게 이동하세요</span>
                   </div>
                 <br/>
-              </div>          
+                <div class="mainbutton">
+                    <button>컨텍트리 카드</button>
+                    <button>카드충전 안내</button>
+                </div>
+              </div>        
         </div>
         <div class="content-container">
             {{content}}
