@@ -109,6 +109,7 @@
     background: #FFFFFF;
     border: 1px solid #008485;
     border-radius: 10px;
+    margin-top: 30px;
 }
 .box2 > button > span{
     width: 300.21px;
@@ -124,7 +125,7 @@
 
 .flexlogin{
     display: inline-block;
-    width: 511px;
+    width: 510px;
 }
 .loginform{
     

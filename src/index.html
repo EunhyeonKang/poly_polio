@@ -49,7 +49,6 @@ layout: layout5
     </section>
     
     <div class="parent_div">
-        <div id="map"></div>
         <div class="child_div">
             <div class="icon_div">
                 <div class="cardBox">
@@ -73,46 +72,6 @@ layout: layout5
    
 
 </body>
-<script>
-    window.onscroll = () => {
-        const parentDiv = document.querySelector('.parent_div');
-        const viewportHeight = window.innerHeight;
-        const fromViewportToParentHeight = parentDiv.getBoundingClientRect().top;
-        const scrolling = viewportHeight - fromViewportToParentHeight;
-        // parentDiv의 height가 뷰포트 높이보다 크면 뷰포트로, 아닐경우 parentDiv로
-        let divHeight = parentDiv.clientHeight > viewportHeight ? viewportHeight : parentDiv.clientHeight;
-        let scrollRate = scrolling / divHeight * 100;
+<script src="../assets/js/script.js"></script>
 
-        if (scrolling / divHeight * 100 < 0) {
-            scrollRate = 0;
-        } else if (scrolling / divHeight * 100 > 100) {
-            scrollRate = 100;
-        }
-
-        // 스타일 적용하는 부분
-        const childDiv = document.querySelector('.child_div');
-        childDiv.style.transform = `scale(${scrollRate / 100})`;
-    };
-
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-  <script>
-    function initMap() {
-      // 지도 초기화 및 표시할 위치 설정
-      var myLatLng = {lat: 37.5665, lng: 126.9780};
-
-      // 지도 생성
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: myLatLng
-      });
-
-      // 마커 생성
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: '여기에 마커가 표시됩니다!'
-      });
-    }
-  </script>
 </html>
