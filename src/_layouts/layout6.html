@@ -15,42 +15,13 @@ layout: bootstrap
     <div id="header-wrap">
         <div class="header-container">
             {% include header.html %}
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/"><img src="../images/hana_logo.png" alt="로고"></a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                      <li class="nav-item">
-                        <a class="nav-link" href="/ctmCenter">교통정보</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/ctmCenter">카드안내</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/bankInfo">충전안내</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/bankInfo">이벤트</a>
-                      </li>
-                    </ul>
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login">로그인</a>
-                        </li>
-                        </ul>
-                        
-                      </ul>
-                  </div>
-                </div>
-              </nav>
+            
 
         </div>
     </div>
 
     <div id="content-wrap">
+      <input id='daynight' type="button" value="night" onclick="nightDayHandler(this);">
         {{content}}
     </div>
     <div id="footer-wrap">
@@ -59,3 +30,19 @@ layout: bootstrap
         </div>
     </div>
 </div>
+<script>
+
+function nightDayHandler(self) {
+    var target = document.getElementById('content-wrap');
+    if (self.value === 'night') {
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        self.value = 'day';
+    } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        self.value = 'night';
+    }
+}
+
+</script>

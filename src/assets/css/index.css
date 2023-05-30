@@ -9,7 +9,6 @@
 .item {
     display: flex;
     padding: 10px; /* 각 영역의 여백을 조정합니다 */
-    height: 100px;
     text-align: center;
     margin: auto;
 }

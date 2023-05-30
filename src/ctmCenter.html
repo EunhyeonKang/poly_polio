@@ -21,6 +21,21 @@ canvas {
   width: 100%;
   height: 100%;
 }
+table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+
   </style>
 </head>
 <body>
@@ -28,6 +43,37 @@ canvas {
         <!--차트가 그려질 부분-->
         <canvas id="myChart"></canvas>
     </div>
+    <table id="trafficTable">
+        <thead>
+          <tr>
+            <th>rownum</th>
+            <th>selectedcount</th>
+            <th>totalcount</th>
+            <th>subwayid</th>
+            <th>updnline</th>
+            <th>trainlinenm</th>
+            <th>statnfid</th>
+            <th>statntid</th>
+            <th>statnid</th>
+            <th>statnnm</th>
+            <th>ordkey</th>
+            <th>subwaylist</th>
+            <th>statnlist</th>
+            <th>barvldt</th>
+            <th>btrainno</th>
+            <th>bstatnid</th>
+            <th>bstatnnm</th>
+            <th>recptndt</th>
+            <th>arvlmsg2</th>
+            <th>arvlmsg3</th>
+            <th>arvlcd</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 데이터가 여기에 동적으로 채워짐-->
+        </tbody>
+      </table>
+      
 </body>
 
 <script type="text/javascript">
@@ -92,3 +138,35 @@ canvas {
         }
     });
 </script>
+<script>
+    // AJAX 요청을 통해 JSON 파일 가져오기
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'traffic.json'); // traffic.json 파일 경로에 따라 수정해야 할 수 있습니다.
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        const jsonData = JSON.parse(xhr.responseText);
+        const tableBody = document.querySelector('#trafficTable tbody');
+
+        // JSON 데이터를 테이블에 추가하는 함수
+        function addRowToTable(data) {
+          const newRow = document.createElement('tr');
+
+          Object.values(data).forEach(value => {
+            const cell = document.createElement('td');
+            cell.textContent = value;
+            newRow.appendChild(cell);
+          });
+
+          tableBody.appendChild(newRow);
+        }
+
+        // JSON 데이터의 각 객체를 순회하며 테이블에 추가
+        jsonData.realtimestationarrival.row.forEach(rowData => {
+          addRowToTable(rowData);
+        });
+      } else {
+        console.error('Failed to load JSON file');
+      }
+    };
+    xhr.send();
+  </script>
