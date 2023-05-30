@@ -24,60 +24,9 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 <style>
-    #header-wrap {
-        width: 100%;
-        background-color: #FFFCFC;
-    }
-
-    #nav-wrap {
-        width: 100%;
-        background-color: #FFFCFC;
-    }
-
-    #content-wrap {
-        width: 100%;
-        background-color: #FFFCFC;
-        flex-grow: 1;
-    }
-    #footer-wrap {
-        width: 100%;
-        background-color: #efeded;
-    }
-
-    .header-container {
-        width: 100%;
-        margin: 0 auto;
-        /* height: 100px; */
-        background-color: #FFFCFC;
-    }
-
-    .nav-container {
-        width: 1000px;
-        margin: 0 auto;
-        height: 100px;
-        background-color: #FFFCFC;
-    }
-
-    .content-container {
-        width: 1000px;
-        margin: 0 auto;
-        height: 100%;
-        background-color: #FFFCFC;
-    }
-
-    .footer-container {
-        width: 1000px;
-        margin: 0 auto;
-        background-color: #FFFCFC;
-    }
-
-    #layout {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-    }
-
+    @import "../assets/css/styles.css";
 </style>
+
 
 <div id="layout">
     <div id="header-wrap">
@@ -126,30 +75,99 @@ Header -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>환율 그래프</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <style>
+.chart-container {
+  width: 400px;
+  height: 300px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+  </style>
 </head>
 <body>
-    고객센터
+    <div class="cardBox">
+        <!--차트가 그려질 부분-->
+        <canvas id="myChart"></canvas>
+    </div>
 </body>
-</html>
+
+<script type="text/javascript">
+    var context = document
+        .getElementById('myChart')
+        .getContext('2d');
+    var myChart = new Chart(context, {
+        type: 'line', // 차트의 형태
+        data: { // 차트에 들어갈 데이터
+            labels: [
+                //x 축
+                '1','2','3','4','5','6','7'
+            ],
+            datasets: [
+                { //데이터
+                    label: 'test1', //차트 제목
+                    fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                    data: [
+                        21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
+                    ],
+                    backgroundColor: [
+                        //색상
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        //경계선 색상
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1 //경계선 굵기
+                }/* ,
+                {
+                    label: 'test2',
+                    fill: false,
+                    data: [
+                        8, 34, 12, 24
+                    ],
+                    backgroundColor: 'rgb(157, 109, 12)',
+                    borderColor: 'rgb(157, 109, 12)'
+                } */
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }
+                ]
+            }
+        }
+    });
+</script>
+
     </div>
     <div id="footer-wrap">
         <div class="footer-container">
             <style>
-@media(max-width: 768px) {
-    .wrap_3ijvD {
-        padding:81px 46px 80px;
-    }
-}@media(max-width: 425px) {
-    .wrap_3ijvD {
-        padding:59px 17px 40px
-    }
-}
-.wrap_3ijvD {
-    display: block;
-    width: 100%;
-    padding: 71px 0 88px;
-    background: #fff;
+.container_3fY1c+.container_3fY1c {
+    margin: 92px auto 0;
+    padding: 24px 0;
 }
 
 .container_3fY1c {
@@ -162,8 +180,56 @@ Header -->
     -ms-flex: 1;
     flex: 1;
 }
-
-    .container_zDtOD {
+.legal_3HAlU {
+    width: 100%;
+    margin-bottom:50px;
+}
+.menuTitle_EKMIM {
+    display: none;
+}
+.policies_2oGvH {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+}
+ol, ul {
+    list-style: none;
+}
+.policies_2oGvH li {
+    line-height: 0;
+}
+.policies_2oGvH a {
+    color: #555b66;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 17px;
+}
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+.copyright_YETJt {
+    display: block;
+    margin: 25px 0 0;
+    color: #888e99;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: left;
+}
+.bold_2ZMQt {
+    font-weight: 700;
+}
+.copyright_YETJt address {
+    display: inline;
+}
+.mobile_B_SpE {
+    display: none;
+}
+.app_3i1Hn {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -171,56 +237,61 @@ Header -->
     flex-direction: column;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;}a {
-    color: inherit;
-    cursor: pointer;
-    text-decoration: none;
-}
-.bi_3XzzK {
-    display: block;
-    width: 207px;
-    height: 33.23px;
-   
-    font-size: 0;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.desktopAndTablet_1QcSs {
-    display: block;
+    text-align: left;
 }
 .app_3i1Hn a {
     display: inline-block;
     color: transparent;
     font-size: 0;
-}.container_1_EuD {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-}.sites_QOiL9:first-child {
-    margin-right: 128px;
-}.sites_QOiL9 {
-    float: left;
+}
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+.hiddenToast_1KjT7 {
+    position: fixed;
+    top: auto;
+    right: auto;
+    bottom: 32px;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+.toast_3_M_G {
+    position: fixed;
+    z-index: 100;
+    top: auto;
+    right: auto;
+    bottom: 64px;
+    left: 0;
     display: block;
-}.sites_QOiL9 {
-    float: left;
+    width: 420px;
+    margin: 0 0 0 42px;
+    padding: 42px 42px 42px 68px;
+    color: #fff;
+    border-radius: 2px;
+    background: #2c2c2c;
+    background: rgba(44,44,44,.94);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.close_32ngn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    bottom: auto;
+    left: auto;
     display: block;
-}.menuTitle_2pCu6 {
-    display: block;
-    margin: 0 0 16px;
-    color: #111;
-    font-size: 14px;
-    font-weight: 700;
-}.menuTitle_2pCu6 {
-    display: block;
-    margin: 0 0 16px;
-    color: #111;
-    font-size: 14px;
-    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    color: transparent;
+    opacity: .4;
+    font-size: 0;
 }
 </style>
 
@@ -228,8 +299,8 @@ Header -->
     <section class="legal_3HAlU">
         <div class="menuTitle_EKMIM">이용 안내</div>
         <ul class="policies_2oGvH">
-            <li><a href="/notices" target="_blank" rel="noopener noreferrer">공지사항</a></li><
-            li><a href="https://policies.banksalad.com/송금/뱅샐머니-이용안내" target="_blank" rel="noopener noreferrer">하나카드 이용안내</a></li>
+            <li><a href="/notices" target="_blank" rel="noopener noreferrer">공지사항</a></li>
+            <li><a href="https://policies.banksalad.com/송금/뱅샐머니-이용안내" target="_blank" rel="noopener noreferrer">하나카드 이용안내</a></li>
             <li><a href="https://www.banksalad.com/users/suspend-account" target="_blank" rel="noopener noreferrer">하나카드 이용정지</a></li>
             <li><a href="/policies/v19/privacy-policy" class="bold_nmCCA" target="_blank" rel="noopener noreferrer">개인정보처리방침</a></li>
             <li><a href="/policies/v5/terms" target="_blank" rel="noopener noreferrer">이용약관</a></li>

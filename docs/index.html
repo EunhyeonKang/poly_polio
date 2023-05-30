@@ -24,178 +24,8 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 <style>
-   
-   @font-face {
-          font-family: 'Noto Sans KR';
-          src:url('../assets/font/Hana2-Bold.otf') format('opentype'),
-              url('../assets/font/Hana2-CM.otf') format('opentype'),
-              url('../assets/font/Hana2-Heavy.otf') format('opentype'),
-              url('../assets/font/Hana2-Light.otf') format('opentype'),
-              url('../assets/font/Hana2-Medium.otf') format('opentype'),
-              url('../assets/font/Hana2-Regular.otf') format('opentype');
-      } 
-
-    #header-wrap {
-        width: 100%;
-        background-color: #8d6e63;
-    }
-
-    #nav-wrap {
-        width: 100%;
-        background-color: #a1887f;
-    }
-
-    #content-wrap {
-        width: 100%;
-        background-color: #ffffff;
-        flex-grow: 1;
-    }
-
-    #footer-wrap {
-        width: 100%;
-        background-color: #d7ccc8;
-    }
-
-    .header-container {
-        width: 100%;
-        margin: 0 auto;
-        /* height: 100px; */
-        background-color: #FFFCFC;
-    }
-
-    .nav-container {
-        width: 1000px;
-        margin: 0 auto;
-        height: 100px;
-        background-color: #4e342e;
-    }
-
-    .main-container {
-        width: 100%;
-        margin: 0 auto;
-        height: 400px;
-        background: linear-gradient(to bottom, rgba(0, 132, 133, 0.6), rgb(136, 136, 136,0.6));
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .content-container {
-        width: 1000px;
-        margin: 0 auto;
-    }
-
-    .footer-container {
-        width: 1000px;
-        margin: 0 auto;
-        background-color: #008485;
-    }
-
-    #layout {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-    }
-
-    .trafficCard{
-        opacity: 1;
-        transform: translateX(0%) rotate(0deg);
-        animation: slideAndRotate 3s;
-        margin-left: 50px;
-        width: 100%;
-        height: auto;
-        text-align: center;
-        display: flex;
-        justify-content: right;
-    }
-    
-    @keyframes slideAndRotate {
-        0% {
-            opacity: 1;
-            transform: translateX(-100%) rotate(0deg);
-        }
-        100% {
-            opacity: 1;
-            transform: translateX(0%) rotate(0deg);
-        }
-       
-    }
-    .trafficCard img {
-        box-shadow: 0 0 10px rgb(74, 73, 73);
-        border-radius: 15px;
-        margin:5px;
-    }
-
-    .textAnimation .line {
-        opacity: 0;
-        transition: opacity 1s ease;
-        text-align: center;
-        margin-left: 30px;
-       /* font-family: 'Noto Sans KR', sans-serif; */
-        width: 350px;
-    }
-    .textAnimation{
-        margin-right: 50px;
-        text-align: center;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-    }
-    .textAnimation .line.show {
-        text-shadow: 2px 2px 4px rgba(191, 191, 191, 0.5);
-        opacity: 1;
-    }
-
-    .textAnimation .line.show .text {
-        animation: fadeIn 1s ease;
-        font-size: 24px;
-        color: black;
-    }
-
-    @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-    .textAnimation .line:nth-child(1)>span{
-        font-size: 36px;   
-    }
-    .textAnimation .line:nth-child(3)>span{
-        font-size: 36px;
-    }
-    .textAnimation .line:nth-child(5)>span{
-        font-size: 36px;
-    }
-    .hana{
-        font-size: 36px;
-        color: #008485;
-    }
-    .mainbutton{
-        width: 350px;
-       margin-left: 30px;
-       animation: fadeIn 6s ease;
-    }
-    .mainbutton>button {
-        background: #ffbe4c;
-        border: 1px solid #ffbe4c;
-        margin-top: 15px;
-        margin: 5px;
-        max-width: fit-content;
-        padding: 10px 20px;
-        border-radius: 41px;
-        -webkit-box-shadow: 0 4px 9px rgba(0,0,0,.15);
-        box-shadow: 0 4px 9px rgba(0,0,0,.15);
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 21px;   
-        width: 330px;
-    }
-    .mainbutton>button:hover {
-        font-size: large;
-        color: #FFFFFF;
-    }
+    @import "../assets/css/styles.css";
 </style>
-
 <div id="layout">
     <div id="header-wrap">
         <div class="header-container">
@@ -271,219 +101,9 @@ Header -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container {
-            display: grid;
-            grid-template-rows: 1fr;
-            gap: 10px; /* 필요한 경우 각 영역 사이의 간격을 조정합니다 */
-        }
-
-        .item {
-            display: grid;
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr 1fr; 
-            gap: 10px;
-            background-color: #ffffff; /* 각 영역의 배경색을 지정합니다 */
-            padding: 10px; /* 각 영역의 여백을 조정합니다 */
-            height: 100px;
-            text-align: center;
-            margin: auto;
-        }
-        .item1{
-            width: 405px;
-            text-align: center;
-            margin: auto;
-            padding: 30px;
-        }
-        .load{
-            width: 137.2px;
-            height: 24px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 22px;
-            line-height: 27px;
-            text-align: center;
-            margin: auto;
-            color: #E49600;
-        }
-
-
-        .hanabank{
-            
-            width: 163.95px;
-            height: 24px;
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 22px;
-            line-height: 27px;
-            text-align: center;
-
-            color: #008485;
-
-        }
-        .home{
-
-            
-            width: 39.35px;
-            height: 24px;
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 22px;
-            line-height: 27px;
-            text-align: center;
-
-            color: #008485;
-
-
-        }
-        .from{
-            
-            width: 57.93px;
-            height: 24px;
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 24px;
-            text-align: center;
-
-            color: #CDC9C9;
-        }
-
-
-        .to{
-            
-            width: 57.93px;
-            height: 24px;
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 24px;
-            text-align: center;
-
-            color: #CDC9C9;
-
-        }
-        .min{
-            /* 최단거리/최소요금/최소환승 */
-            width: 186px;
-            height: 17px;
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 15px;
-            line-height: 18px;
-            text-align: center;
-
-            color: #CDC9C9;
-
-
-        }
-        .parent_div{
-            margin-top: 50px;
-            margin-bottom: 80px;
-        }
-        .child_div{
-            margin-left: auto;
-            margin-right: auto;
-            transform-origin: 50% 0%;
-            background-color: white;
-            height: 100%;
-        }
-        .cardBox {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .block img {
-            width: 300px;
-            margin-bottom: 10px;
-        }
-
-        .block button {
-            width: 250px;
-            height: 50px;
-            background: #FFFFFF;
-            border: 3px solid #008485;
-            border-radius: 10px;
-            margin-top: 15px;
-            cursor: pointer;
-            color: #008485;
-        }
-
-        .section_11tbR {
-            display: block;
-            margin: 0 0 12px;
-            padding: 48px 0;
-            background: #fff;
-        }.container_1zV2H {
-            position: relative;
-            display: block;
-            width: 100%;
-            max-width: 946px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }.featureTitle_k0uDt {
-            display: block;
-            color: #7b7b7b;
-            font-size: 18px;
-            line-height: 1.2;
-            text-align: center;
-        }.featureTitle_k0uDt>strong {
-            display: block;
-            margin: 12px 0 0;
-            color: #0b0c0c;
-            font-size: 28px;
-            font-weight: 500;
-            letter-spacing: -2px;
-        }.features_2Xft6 {
-            display: block;
-        } ul {
-            list-style: none;
-        }.features_2Xft6>li {
-            float: left;
-            display: block;
-            width: 33.33%;
-            padding: 0 16px;
-            text-align: center;
-        }.featureImage_Ew8M_ {
-            display: inline-block;
-            width: 160px;
-            margin-bottom: 16px;
-        }
-        .mobileWordBreak_D9KG7 {
-            display: inline-block;
-        }
-        #map {
-            width: 100%;
-            height: 400px;
-        }
-        .trafficlist{
-            font-size: larger;
-            font-weight: 800;
-            color: #008485;
-        }
+        @import "./assets/css/styles.css";
     </style>
-   
 </head>
-
 <body>
     <section class="section_11tbR">
         <div class="container_1zV2H">
@@ -518,44 +138,30 @@ Header -->
             </ul>
         </div>
     </section>
-
-    <br/><br/>
-
     
-    <div class="container">
-        <div class="item1">
-            <span class="home">집</span>
-            <span class="to">에서</span>
-            <span class="hanabank">하나금융티아이</span>
-            <span class="from">까지</span>
-            <span class="load">최적의 경로</span>
-        </div>    
-        <div class="item">
-            <span class="min">최단거리/최소요금/최소환승</span>
-            <span class="min">최단거리/최소주유비/통행료</span>
-        </div>
-    </div>
     <div class="parent_div">
+        <div id="map"></div>
         <div class="child_div">
             <div class="icon_div">
                 <div class="cardBox">
                     <div class="block">
                         <img src="./images/3875148.png" width="200" height="300" alt="Image 1">
-                      <button>버튼 1</button>
+                      <button>카드1</button>
                     </div>
                     <div class="block">
                         <img src="./images/3875148.png" width="200" height="300" alt="Image 1">
-                      <button>버튼 2</button>
+                      <button>카드2</button>
                     </div>
                     <div class="block">
                         <img src="./images/3875148.png" width="200" height="300" alt="Image 1">
-                      <button>버튼 3</button>
+                      <button>카드3</button>
                     </div>
                   </div>
             </div>
         </div>
     </div>
-    <div id="map"></div>
+    
+   
 
 </body>
 <script>
@@ -607,20 +213,9 @@ Header -->
     <div id="footer-wrap">
         <div class="footer-container">
             <style>
-@media(max-width: 768px) {
-    .wrap_3ijvD {
-        padding:81px 46px 80px;
-    }
-}@media(max-width: 425px) {
-    .wrap_3ijvD {
-        padding:59px 17px 40px
-    }
-}
-.wrap_3ijvD {
-    display: block;
-    width: 100%;
-    padding: 71px 0 88px;
-    background: #fff;
+.container_3fY1c+.container_3fY1c {
+    margin: 92px auto 0;
+    padding: 24px 0;
 }
 
 .container_3fY1c {
@@ -633,8 +228,56 @@ Header -->
     -ms-flex: 1;
     flex: 1;
 }
-
-    .container_zDtOD {
+.legal_3HAlU {
+    width: 100%;
+    margin-bottom:50px;
+}
+.menuTitle_EKMIM {
+    display: none;
+}
+.policies_2oGvH {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+}
+ol, ul {
+    list-style: none;
+}
+.policies_2oGvH li {
+    line-height: 0;
+}
+.policies_2oGvH a {
+    color: #555b66;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 17px;
+}
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+.copyright_YETJt {
+    display: block;
+    margin: 25px 0 0;
+    color: #888e99;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: left;
+}
+.bold_2ZMQt {
+    font-weight: 700;
+}
+.copyright_YETJt address {
+    display: inline;
+}
+.mobile_B_SpE {
+    display: none;
+}
+.app_3i1Hn {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -642,56 +285,61 @@ Header -->
     flex-direction: column;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;}a {
-    color: inherit;
-    cursor: pointer;
-    text-decoration: none;
-}
-.bi_3XzzK {
-    display: block;
-    width: 207px;
-    height: 33.23px;
-   
-    font-size: 0;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.desktopAndTablet_1QcSs {
-    display: block;
+    text-align: left;
 }
 .app_3i1Hn a {
     display: inline-block;
     color: transparent;
     font-size: 0;
-}.container_1_EuD {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-}.sites_QOiL9:first-child {
-    margin-right: 128px;
-}.sites_QOiL9 {
-    float: left;
+}
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+.hiddenToast_1KjT7 {
+    position: fixed;
+    top: auto;
+    right: auto;
+    bottom: 32px;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+.toast_3_M_G {
+    position: fixed;
+    z-index: 100;
+    top: auto;
+    right: auto;
+    bottom: 64px;
+    left: 0;
     display: block;
-}.sites_QOiL9 {
-    float: left;
+    width: 420px;
+    margin: 0 0 0 42px;
+    padding: 42px 42px 42px 68px;
+    color: #fff;
+    border-radius: 2px;
+    background: #2c2c2c;
+    background: rgba(44,44,44,.94);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.close_32ngn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    bottom: auto;
+    left: auto;
     display: block;
-}.menuTitle_2pCu6 {
-    display: block;
-    margin: 0 0 16px;
-    color: #111;
-    font-size: 14px;
-    font-weight: 700;
-}.menuTitle_2pCu6 {
-    display: block;
-    margin: 0 0 16px;
-    color: #111;
-    font-size: 14px;
-    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    color: transparent;
+    opacity: .4;
+    font-size: 0;
 }
 </style>
 
@@ -699,8 +347,8 @@ Header -->
     <section class="legal_3HAlU">
         <div class="menuTitle_EKMIM">이용 안내</div>
         <ul class="policies_2oGvH">
-            <li><a href="/notices" target="_blank" rel="noopener noreferrer">공지사항</a></li><
-            li><a href="https://policies.banksalad.com/송금/뱅샐머니-이용안내" target="_blank" rel="noopener noreferrer">하나카드 이용안내</a></li>
+            <li><a href="/notices" target="_blank" rel="noopener noreferrer">공지사항</a></li>
+            <li><a href="https://policies.banksalad.com/송금/뱅샐머니-이용안내" target="_blank" rel="noopener noreferrer">하나카드 이용안내</a></li>
             <li><a href="https://www.banksalad.com/users/suspend-account" target="_blank" rel="noopener noreferrer">하나카드 이용정지</a></li>
             <li><a href="/policies/v19/privacy-policy" class="bold_nmCCA" target="_blank" rel="noopener noreferrer">개인정보처리방침</a></li>
             <li><a href="/policies/v5/terms" target="_blank" rel="noopener noreferrer">이용약관</a></li>

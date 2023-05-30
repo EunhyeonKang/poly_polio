@@ -10,6 +10,69 @@ layout: layout6
     <title>Document</title>
 </head>
 <body>
-    은행안내
+    <div class="group71">
+        <div class="group31">
+            <form action=""> 
+                <div class="container">
+                    <input type="text" id="search-input" placeholder="주소를 입력하세요">
+                    <div id="result"></div>
+                    <br/><br/>
+                    <div class="item1">
+                        <span class="home">파리</span>
+                        <span class="to">에서</span>
+                        <span class="hanabank">런던</span>
+                        <span class="from">까지</span>
+                        <span class="load">최적의 경로</span>
+                    </div>    
+                    <div class="item">
+                        <span class="min">최단거리/최소요금/최소환승</span>
+                        <span class="min">최단거리/최소주유비/통행료</span> 
+                    </div>
+                    <div class="flexlogin">
+                        <div class="flexlogin">
+                            <span class="idbox">출발지</span>
+                            <input type="text" class="rec6" id="rec6" placeholder="아이디를 입력해주세요"/>                     
+                        </div>
+                        <span class="idbox">도착지</span>
+                        <input type="text" class="rec6" id="rec6" placeholder="비밀번호를 입력해주세요"/>                     
+                        <button id="login2">
+                            <span>조회</span>
+                        </button>
+                    </div>
+                    <br/>
+                   
+                </div>
+                <br/>
+                </div>
+               
+            </form>
+        </div>
+    </div>
 </body>
+<script>
+    function initMap() {
+      const input = document.getElementById('search-input');
+      const autocomplete = new google.maps.places.Autocomplete(input);
+
+      autocomplete.addListener('place_changed', function() {
+        const place = autocomplete.getPlace();
+        if (!place.geometry) {
+          // 잘못된 주소나 검색 결과가 없을 경우 처리할 로직 작성
+          return;
+        }
+
+        // 주소의 위치 좌표 정보
+        const latitude = place.geometry.location.lat();
+        const longitude = place.geometry.location.lng();
+
+        // 검색 결과 출력
+        const result = document.getElementById('result');
+        result.textContent = `입력한 주소의 위치 좌표: ${latitude}, ${longitude}`;
+      });
+    }
+
+    // Google Maps API 스크립트 로드 후 initMap 함수 호출
+    window.initMap = initMap;
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap"></script>
 </html>
