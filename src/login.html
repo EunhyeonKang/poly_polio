@@ -11,11 +11,6 @@ layout: layout6
     <style>
         @import "./assets/css/styles.css";
     </style>
-      <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
-    integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
-    <script>
-        Kakao.init('b49a9c0e8dea571387707e2e2ac99432'); // 사용하려는 앱의 JavaScript 키 입력
-    </script>
 </head>
 <body>
     <div class="group71">
@@ -51,38 +46,10 @@ layout: layout6
         </div>
     </div>
 </body>
-<script>
-        function loginWithKakao() {
-            Kakao.Auth.authorize({
-            redirectUri: 'http://127.0.0.1:5500/kakao/login.html',
-            });
-        }
-
-        // 아래는 데모를 위한 UI 코드입니다.
-        displayToken();
-        function displayToken() {
-            var token = getCookie('authorize-access-token');
-
-            if(token) {
-                Kakao.Auth.setAccessToken(token);
-                Kakao.Auth.getStatusInfo()
-                    .then(function(res) {
-                    if (res.status === 'connected') {
-                        document.getElementById('token-result').innerText
-                        = 'login success, token: ' + Kakao.Auth.getAccessToken();
-                    }
-                    })
-                    .catch(function(err) {
-                    Kakao.Auth.setAccessToken(null);
-                    });
-            }
-        }
-
-        function getCookie(name) {
-            var parts = document.cookie.split(name + '=');
-            if (parts.length === 2) { 
-                return parts[1].split(';')[0]; 
-            }
-        }
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+    integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+    <script>
+        Kakao.init('b49a9c0e8dea571387707e2e2ac99432'); // 사용하려는 앱의 JavaScript 키 입력
     </script>
+<script src="../assets/js/script4.js"></script>
 </html>

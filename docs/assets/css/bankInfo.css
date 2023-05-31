@@ -15,6 +15,36 @@
    
     color: #FFFFFF;
 }
+
+.card-container {
+display: flex;
+flex-wrap: wrap;
+}
+.card {
+width: 200px;
+margin: 10px;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.card img {
+width: 150px;
+height: 100px;
+object-fit: cover;
+margin-bottom: 10px;
+border-radius: 5px;
+}
+.card h3 {
+font-size: 18px;
+margin-bottom: 5px;
+}
+.card p {
+font-size: 14px;
+color: #888;
+}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -46,6 +76,7 @@ table {
     margin-bottom: 10px;
     text-align: center;
   }
+  
   button {
     width: 100px;
     margin-right: 5px;
@@ -60,7 +91,7 @@ table {
     margin-bottom: 5px;
     
   }
-  
+
   button:hover {
     background-color: #d9d9d9;
   }
@@ -75,11 +106,13 @@ table {
   }
   
   #calendar {
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: #FFFCFC;
+    flex-wrap: wrap;
   }
   
   #startend{
