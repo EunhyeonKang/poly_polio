@@ -13,12 +13,12 @@
 <loc>http://localhost:4000/ctmCenter.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/event.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/login.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/serviceInfo.html</loc>
 </url>
 </urlset>

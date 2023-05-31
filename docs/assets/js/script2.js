@@ -62,7 +62,7 @@ var context = document
 
         // AJAX 요청을 통해 JSON 파일 가져오기
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'traffic.json'); // traffic.json 파일 경로에 따라 수정해야 할 수 있습니다.
+        xhr.open('GET', '../../data/traffic.json'); // traffic.json 파일 경로에 따라 수정해야 할 수 있습니다.
         xhr.onload = function() {
           if (xhr.status === 200) {
             const jsonData = JSON.parse(xhr.responseText);
