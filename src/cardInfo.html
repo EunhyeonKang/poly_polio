@@ -1,0 +1,82 @@
+---
+layout: layout6
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+    
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+    
+        th {
+          background-color: #f2f2f2;
+        }
+      </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>이름</th>
+      <th>나이</th>
+      <th>국가</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>25</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td>Mary</td>
+      <td>30</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>David</td>
+      <td>35</td>
+      <td>Australia</td>
+    </tr>  
+    </table>
+
+    
+</body>
+
+<script>
+    // 한국수출입은행 OpenAPI 인증키
+    console.log("sdfsfd");
+const apiKey = '4Xq9MUHZEaIYSBNn1XcmpLC3psy0AhQZ';
+
+// API 요청 URL
+const apiUrl = 'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON';
+
+// 요청 파라미터 설정
+const requestParams = {
+  authkey: apiKey,   // 발급받은 인증키 입력
+  searchdate: '20230431',  // 조회할 날짜 설정 (YYYYMMDD 형식)
+  data: 'AP01',  // 조회할 데이터 유형 (AP01: 전체)
+};
+
+// API 요청
+fetch(apiUrl + '?' + new URLSearchParams(requestParams))
+  .then(response => response.json())
+  .then(data => {
+    // API 응답 데이터 처리
+    console.log(data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+</script>
+</html>
