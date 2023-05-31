@@ -21,7 +21,6 @@ layout: bootstrap
     </div>
 
     <div id="content-wrap">
-      <input id='daynight' type="button" value="night" onclick="nightDayHandler(this);">
         {{content}}
     </div>
     <div id="footer-wrap">
@@ -30,19 +29,3 @@ layout: bootstrap
         </div>
     </div>
 </div>
-<script>
-
-function nightDayHandler(self) {
-    var target = document.getElementById('content-wrap');
-    if (self.value === 'night') {
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
-        self.value = 'day';
-    } else {
-        target.style.backgroundColor = 'white';
-        target.style.color = 'black';
-        self.value = 'night';
-    }
-}
-
-</script>

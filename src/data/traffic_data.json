@@ -1,0 +1,41 @@
+{
+    "traffic": [
+      {
+        "id": 1,
+        "location": "1 zone",
+        "vehicleCount": 10,
+        "status": "Heavy Traffic"
+      },
+      {
+        "id": 2,
+        "location": "2 zone",
+        "vehicleCount": 5,
+        "status": "Moderate Traffic"
+      },
+      {
+        "id": 3,
+        "location": "3 zone",
+        "vehicleCount": 2,
+        "status": "Light Traffic"
+      },
+      {
+        "id": 4,
+        "location": "4 zone",
+        "vehicleCount": 7,
+        "status": "Moderate Traffic"
+      },
+      {
+        "id": 5,
+        "location": "5 zone",
+        "vehicleCount": 1,
+        "status": "Light Traffic"
+      },
+      {
+        "id": 6,
+        "location": "6 zone",
+        "vehicleCount": 15,
+        "status": "Heavy Traffic"
+      }
+    ]
+  }
+  

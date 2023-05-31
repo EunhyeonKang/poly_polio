@@ -1,0 +1,91 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "name": "Card A",
+      "type": "Credit",
+      "creditLimit": 5000,
+      "balance": 2500,
+      "image": "././images/3875148.png"
+    },
+    {
+      "id": 2,
+      "name": "Card B",
+      "type": "Debit",
+      "creditLimit": 5000,
+      "balance": 1000,
+      "image": "././images/3875148.png"
+    },
+    {
+      "id": 3,
+      "name": "Card C",
+      "type": "Credit",
+      "creditLimit": 8000,
+      "balance": 5000,
+      "image": "././images/3875148.png"
+    },{
+        "id": 3,
+        "name": "Card C",
+        "type": "Credit",
+        "creditLimit": 8000,
+        "balance": 5000,
+        "image": "././images/3875148.png"
+      },{
+        "id": 3,
+        "name": "Card C",
+        "type": "Credit",
+        "creditLimit": 8000,
+        "balance": 5000,
+        "image": "././images/3875148.png"
+      },{
+        "id": 3,
+        "name": "Card C",
+        "type": "Credit",
+        "creditLimit": 8000,
+        "balance": 5000,
+        "image": "././images/3875148.png"
+      },{
+        "id": 3,
+        "name": "Card C",
+        "type": "Credit",
+        "creditLimit": 8000,
+        "balance": 5000,
+        "image": "././images/3875148.png"
+      },{
+        "id": 3,
+        "name": "Card C",
+        "type": "Credit",
+        "creditLimit": 8000,
+        "balance": 5000,
+        "image": "././images/3875148.png"
+      },{
+        "id": 3,
+        "name": "Card C",
+        "type": "Credit",
+        "creditLimit": 8000,
+        "balance": 5000,
+        "image": "././images/3875148.png"
+      },{
+        "id": 3,
+        "name": "Card C",
+        "type": "Credit",
+        "creditLimit": 8000,
+        "balance": 5000,
+        "image": "././images/3875148.png"
+      },{
+        "id": 3,
+        "name": "Card C",
+        "type": "Credit",
+        "creditLimit": 8000,
+        "balance": 5000,
+        "image": "././images/3875148.png"
+      },{
+        "id": 3,
+        "name": "Card C",
+        "type": "Credit",
+        "creditLimit": 8000,
+        "balance": 5000,
+        "image": "././images/3875148.png"
+      }
+  ]
+}

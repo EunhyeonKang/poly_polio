@@ -1,3 +1,6 @@
+h2{
+  text-align: center;
+}
 @font-face {
     font-family: 'Noto Sans KR';
     src:url('../assets/font/Hana2-Bold.otf') format('opentype'),

@@ -40,20 +40,6 @@ document.getElementById('contact').addEventListener('click', function() {
     window.location.href = '/bankInfo';
   });
 
-// 라이트/다크 모드
-function nightDayHandler(self) {
-var target = document.getElementById('content-wrap');
-if (self.value === 'night') {
-    target.style.backgroundColor = 'black';
-    target.style.color = 'white';
-    self.value = 'day';
-} else {
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
-    self.value = 'night';
-}
-}
-
 
 // 캘린더
   var Calendar = {

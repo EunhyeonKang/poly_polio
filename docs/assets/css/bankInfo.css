@@ -46,7 +46,6 @@ table {
     margin-bottom: 10px;
     text-align: center;
   }
-  
   button {
     width: 100px;
     margin-right: 5px;
@@ -76,13 +75,11 @@ table {
   }
   
   #calendar {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: #FFFCFC;
-    flex-wrap: wrap;
   }
   
   #startend{
