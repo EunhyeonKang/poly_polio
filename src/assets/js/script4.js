@@ -150,3 +150,4 @@ function getCookie(name) {
         return parts[1].split(';')[0]; 
     }
 }
+
